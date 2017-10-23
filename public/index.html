@@ -10,17 +10,13 @@
 
 <body>
     <div id="app">
-        {{ message }}
+        <p>{{ message }}</p>
+        <app3></app3>
+        <todo-component></todo-component>
     </div>
     <div id="app-3">
-        <span v-if="seen">Now you see me</span>
     </div>
     <div id="app-4">
-        <ol>
-            <li v-for="todo in todos">
-                {{ todo.text }}
-            </li>
-        </ol>
     </div>
     <div id="app-5">
         <p>{{ message }}</p>
@@ -32,9 +28,7 @@
     </div>
     <div id="example">
         <my-component></my-component>
-    </div>
-    <div id="example2">
-        <div is="my-component"></div>
+        <div is="my-component2"></div>
     </div>
     <script src="https://unpkg.com/vue"></script>
     <script src="index.js"></script>

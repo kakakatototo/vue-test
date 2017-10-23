@@ -1,30 +1,34 @@
 /// <reference path="./vue.js" />
 
+Vue.component('app3', {
+    template: '<span v-if="seen">Now you see me</span>',
+    data: function() {
+        return {
+            seen: true
+        };
+    }
+})
+Vue.component('todo-component', {
+    template: '<ol><li v-for="todo in todos">{{ todo.text }}</li></ol>',
+    data: function() {
+        return {
+            todos: [{
+                    text: 'Learn JavaScript'
+                },
+                {
+                    text: 'Learn Vue'
+                },
+                {
+                    text: 'Build something awesome'
+                }
+            ]
+        };
+    }
+})
 var app = new Vue({
     el: '#app',
     data: {
         message: 'Hello Vue!'
-    }
-});
-var app3 = new Vue({
-    el: '#app-3',
-    data: {
-        seen: false
-    }
-});
-var app4 = new Vue({
-    el: '#app-4',
-    data: {
-        todos: [{
-                text: 'Learn JavaScript'
-            },
-            {
-                text: 'Learn Vue'
-            },
-            {
-                text: 'Build something awesome'
-            }
-        ]
     }
 });
 var app5 = new Vue({
@@ -47,14 +51,10 @@ var app6 = new Vue({
 Vue.component('my-component', {
     template: '<div>A custom component!</div>'
 });
-// root インスタンスを作成する
-new Vue({
-    el: '#example'
-});
-Vue.component('my-component', {
+Vue.component('my-component2', {
     template: '<div>A custom component!</div>'
 });
 // root インスタンスを作成する
 new Vue({
-    el: '#example2'
+    el: '#example'
 });
